@@ -26,7 +26,17 @@ namespace CountriesGame.Dal.Repositories
             if (userId == null)
                 throw new ArgumentNullException(nameof(userId));
 
-            return await _context.Users.FindAsync(userId);
+            var user = await _context.Users
+                .Include(u => u.Head)
+                .FirstOrDefaultAsync(u => u.Id == userId);
+
+            if (user == null)
+                return null;
+
+            if (user.Head != null)
+                user.Head.SubUsers = null;
+
+            return user;
         }
 
         public async Task<IEnumerable<User>> GetByHeadId(string headId)
@@ -35,7 +45,14 @@ namespace CountriesGame.Dal.Repositories
                 throw new ArgumentNullException(nameof(headId));
 
             var query = _context.Users
-                .Where(u => u.HeadId == headId);
+                .Where(u => u.HeadId == headId)
+                .Include(u => u.Head);
+
+            await query.ForEachAsync(u =>
+            {
+                if (u.Head != null)
+                    u.Head.SubUsers = null;
+            });
 
             return await query.ToListAsync();
         }
