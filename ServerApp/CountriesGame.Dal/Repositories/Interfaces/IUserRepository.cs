@@ -6,8 +6,8 @@ namespace CountriesGame.Dal.Repositories.Interfaces
 {
     public interface IUserRepository
     {
-        Task<User> Get(string userId);
+        Task<User> GetAsync(string userId);
 
-        Task<IEnumerable<User>> GetByHeadId(string headId);
+        Task<IEnumerable<User>> GetByHeadIdAsync(string headId);
     }
 }

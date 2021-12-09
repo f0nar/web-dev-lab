@@ -20,7 +20,7 @@ namespace CountriesGame.Dal.Repositories
             _context = context;
         }
 
-        public async Task<Country> Get(string id)
+        public async Task<Country> GetAsync(string id)
         {
             if (id == null)
                 throw new ArgumentNullException(nameof(id));
@@ -43,7 +43,7 @@ namespace CountriesGame.Dal.Repositories
             return country;
         }
 
-        public async Task<Country> GetByName(string name)
+        public async Task<Country> GetByNameAsync(string name)
         {
             if (name == null)
                 throw new ArgumentNullException(nameof(name));

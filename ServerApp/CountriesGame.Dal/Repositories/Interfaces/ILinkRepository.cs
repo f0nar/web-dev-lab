@@ -6,6 +6,6 @@ namespace CountriesGame.Dal.Repositories.Interfaces
 {
     public interface ILinkRepository
     {
-        Task<IEnumerable<Link>> GetByCountryId(string countryId);
+        Task<IEnumerable<Link>> GetByCountryIdAsync(string countryId);
     }
 }

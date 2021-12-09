@@ -21,7 +21,7 @@ namespace CountriesGame.Dal.Repositories
             _context = context;
         }
 
-        public async Task<IEnumerable<Link>> GetByCountryId(string countryId)
+        public async Task<IEnumerable<Link>> GetByCountryIdAsync(string countryId)
         {
             var query = _context.Links
                 .Where(l => l.CountryId == countryId)

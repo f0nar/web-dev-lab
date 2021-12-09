@@ -5,8 +5,8 @@ namespace CountriesGame.Dal.Repositories.Interfaces
 {
     public interface ICountryRepository
     {
-        Task<Country> Get(string id);
+        Task<Country> GetAsync(string id);
 
-        Task<Country> GetByName(string name);
+        Task<Country> GetByNameAsync(string name);
     }
 }

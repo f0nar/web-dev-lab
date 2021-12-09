@@ -21,7 +21,7 @@ namespace CountriesGame.Dal.Repositories
             _context = context;
         }
 
-        public async Task<User> Get(string userId)
+        public async Task<User> GetAsync(string userId)
         {
             if (userId == null)
                 throw new ArgumentNullException(nameof(userId));
@@ -39,7 +39,7 @@ namespace CountriesGame.Dal.Repositories
             return user;
         }
 
-        public async Task<IEnumerable<User>> GetByHeadId(string headId)
+        public async Task<IEnumerable<User>> GetByHeadIdAsync(string headId)
         {
             if (headId == null)
                 throw new ArgumentNullException(nameof(headId));
