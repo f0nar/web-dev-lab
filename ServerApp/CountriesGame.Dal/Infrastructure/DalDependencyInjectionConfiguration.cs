@@ -1,5 +1,7 @@
 using CountriesGame.Dal.DbContext;
 using CountriesGame.Dal.Entities;
+using CountriesGame.Dal.FileReaders;
+using CountriesGame.Dal.FileReaders.Interfaces;
 using CountriesGame.Dal.UnitOfWorks;
 using CountriesGame.Dal.UnitOfWorks.Interfaces;
 using Microsoft.AspNetCore.Identity;
@@ -24,6 +26,7 @@ namespace CountriesGame.Dal.Infrastructure
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
             services.AddTransient<IUnitOfWork, EFUnitOfWork>();
+            services.AddTransient<IFileReader, FileReader>();
 
             return services;
         }
