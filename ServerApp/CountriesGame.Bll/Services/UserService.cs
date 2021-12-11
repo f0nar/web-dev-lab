@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
 using CountriesGame.Bll.DTOs;
-using CountriesGame.Dal.Repositories.Interfaces;
+using CountriesGame.Bll.Services.Interfaces;
 using CountriesGame.Dal.UnitOfWorks.Interfaces;
 
 namespace CountriesGame.Bll.Services

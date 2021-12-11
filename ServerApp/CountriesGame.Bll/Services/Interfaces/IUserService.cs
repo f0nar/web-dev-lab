@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using CountriesGame.Bll.DTOs;
 
-namespace CountriesGame.Dal.Repositories.Interfaces
+namespace CountriesGame.Bll.Services.Interfaces
 {
     public interface IUserService
     {
