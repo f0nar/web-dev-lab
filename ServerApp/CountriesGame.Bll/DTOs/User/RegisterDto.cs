@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace CountriesGame.Bll.DTOs
 {
-    public class AddUserDto
+    public class RegisterDto
     {
         [Required]
         [StringLength(20, MinimumLength = 2)]
