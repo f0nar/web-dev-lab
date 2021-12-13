@@ -41,6 +41,7 @@ namespace CountriesGame.Bll.Infrastructure
             await SeedUsersDataAsync();
             await SeedDataAsync<Country>("Countries.json");
             await SeedDataAsync<Link>("Links.json");
+            await SeedDataAsync<Quiz>("Quizzes.json");
         }
 
         private async Task SeedRolesDataAsync()
