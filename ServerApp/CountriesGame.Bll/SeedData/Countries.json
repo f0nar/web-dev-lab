@@ -1,0 +1,10 @@
+[
+    {
+        "Id": "1",
+        "CountryName": "Ukraine",
+        "CapitalName": "Kyiv",
+        "FlagPath": "Files/Ukraine/flag.svg",
+        "CoatPath": "Files/Ukraine/coat.svg",
+        "AnthemPath": "Files/Ukraine/anthem.mp3"
+    }
+]

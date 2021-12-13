@@ -1,0 +1,41 @@
+[
+    {
+        "Id": "1",
+        "UserName": "SmithSigrid",
+        "FirstName": "Sigrid",
+        "LastName": "Smith",
+        "PasswordConfirmed": true
+    },
+    {
+        "Id": "2",
+        "UserName": "BobovBob",
+        "FirstName": "Bob",
+        "LastName": "Bobov",
+        "PasswordConfirmed": false,
+        "HeadId": "1"
+    },
+    {
+        "Id": "3",
+        "UserName": "FisherLee",
+        "FirstName": "Lee",
+        "LastName": "Fisher",
+        "PasswordConfirmed": false,
+        "HeadId": "1"
+    },
+    {
+        "Id": "4",
+        "UserName": "KleinCherry",
+        "FirstName": "Cherry",
+        "LastName": "Klein",
+        "PasswordConfirmed": true,
+        "HeadId": "1"
+    },
+    {
+        "Id": "5",
+        "UserName": "HerreraDiaz",
+        "FirstName": "Diaz",
+        "LastName": "Herrera",
+        "PasswordConfirmed": true,
+        "HeadId": "1"
+    }
+]
