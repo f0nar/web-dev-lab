@@ -2,24 +2,40 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CountriesGame.Bll.Infrastructure;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using CountriesGame.Web.Extensions;
 
 namespace CountriesGame.Web
 {
     public class Startup
     {
-        // This method gets called by the runtime. Use this method to add services to the container.
-        // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
-        public void ConfigureServices(IServiceCollection services)
+        private readonly IConfiguration _configuration;
+
+        public Startup(IConfiguration configuration)
         {
+            _configuration = configuration;
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void ConfigureServices(IServiceCollection services)
+        {
+            services.ConfigureBll(_configuration);
+
+            services.AddControllers()
+                .AddJsonOptions(options =>
+                    options.JsonSerializerOptions.IgnoreNullValues = true);
+
+            services.ConfigureSwagger();
+
+            services.ConfigureAuthentication(_configuration);
+        }
+
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IDataSeeder seeder)
         {
             if (env.IsDevelopment())
             {
@@ -28,13 +44,26 @@ namespace CountriesGame.Web
 
             app.UseRouting();
 
+            app.UseAuthentication();
+            app.UseAuthorization();
+
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapGet("/", async context =>
-                {
-                    await context.Response.WriteAsync("Hello World!");
-                });
+                endpoints.MapControllers();
             });
+
+            app.UseSwagger();
+            app.UseSwaggerUI(options =>
+            {
+                options.SwaggerEndpoint("/swagger/v1/swagger.json",
+                    "CountriesGame API");
+            });
+
+            if ((_configuration["INITDB"] ?? "false") == "true")
+            {
+                seeder.SeedDataAsync().Wait();
+            }
+
         }
     }
 }
