@@ -5,9 +5,6 @@ namespace CountriesGame.Bll.DTOs
     public class ChangePasswordDto
     {
         [Required]
-        public string Id { get; set; }
-
-        [Required]
         [DataType(DataType.Password)]
         public string CurrentPassword { get; set; }
 
