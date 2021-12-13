@@ -19,8 +19,5 @@ namespace CountriesGame.Bll.DTOs
         [Required]
         [StringLength(50, MinimumLength = 2)]
         public string LastName { get; set; }
-
-        [Required]
-        public string HeadId { get; set; }
     }
 }
