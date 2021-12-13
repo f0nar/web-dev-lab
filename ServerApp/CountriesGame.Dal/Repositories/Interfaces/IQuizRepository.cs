@@ -6,8 +6,8 @@ namespace CountriesGame.Dal.Repositories.Interfaces
 {
     public interface IQuizRepository
     {
-        Task<Quiz> Get(string id);
+        Task<Quiz> GetAsync(string id);
 
-        Task<IEnumerable<Quiz>> GetAll();
+        Task<IEnumerable<Quiz>> GetAllAsync();
     }
 }

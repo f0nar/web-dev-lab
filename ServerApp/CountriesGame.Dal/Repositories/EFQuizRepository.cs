@@ -20,7 +20,7 @@ namespace CountriesGame.Dal.Repositories
             _context = context;
         }
         
-        public async Task<Quiz> Get(string id)
+        public async Task<Quiz> GetAsync(string id)
         {
             if (id == null)
                 throw new ArgumentNullException(nameof(id));
@@ -50,7 +50,7 @@ namespace CountriesGame.Dal.Repositories
             return quiz;
         }
 
-        public async Task<IEnumerable<Quiz>> GetAll()
+        public async Task<IEnumerable<Quiz>> GetAllAsync()
         {
             return await _context.Quizzes.ToListAsync();
         }
