@@ -38,7 +38,7 @@ namespace CountriesGame.Bll.Services
             _mapper = mapper;
         }
 
-        public async Task<UserDto> RegisterAsync(RegisterDto registerDto)
+        public async Task<UserDto> RegisterAsync(RegisterDto registerDto, string headId = null)
         {
             if (registerDto == null)
                 throw new ArgumentNullException(nameof(registerDto));
@@ -47,11 +47,19 @@ namespace CountriesGame.Bll.Services
 
             var creationResult = await _userManager.CreateAsync(user, registerDto.Password);
             if (!creationResult.Succeeded)
-                throw new IdentityException("Error occured while creating user", creationResult.Errors);
+                throw new IdentityException(creationResult.ToString(), creationResult.Errors);
 
             var roleAddingResult = await _userManager.AddToRoleAsync(user, "Student");
             if (!roleAddingResult.Succeeded)
-                throw new IdentityException("Error occured while adding user to role", roleAddingResult.Errors);
+                throw new IdentityException(creationResult.ToString(), roleAddingResult.Errors);
+
+            if (headId != null)
+            {
+                user.HeadId = headId;
+                var updateResult = await _userManager.UpdateAsync(user);
+                if (!updateResult.Succeeded)
+                    throw new IdentityException(updateResult.ToString(), updateResult.Errors);
+            }
 
             return _mapper.Map<UserDto>(user);
         }
@@ -79,7 +87,7 @@ namespace CountriesGame.Bll.Services
                 throw new ArgumentNullException(nameof(userId));
             if (role == null)
                 throw new ArgumentNullException(nameof(role));
-                
+
             var user = await _userManager.FindByIdAsync(userId);
             if (user == null)
                 throw new EntityNotFoundException("User with specified UserName not found");
@@ -99,7 +107,7 @@ namespace CountriesGame.Bll.Services
             var result = await _userManager.ChangePasswordAsync(user,
                 changePasswordDto.CurrentPassword, changePasswordDto.NewPassword);
             if (!result.Succeeded)
-                throw new IdentityException("Error occured while changing password");
+                throw new IdentityException(result.ToString(), result.Errors);
         }
 
         public async Task ConfirmPassword(string userId)
@@ -114,7 +122,7 @@ namespace CountriesGame.Bll.Services
             user.PasswordConfirmed = true;
             var result = await _userManager.UpdateAsync(user);
             if (!result.Succeeded)
-                throw new IdentityException("Error occured while confirming password");
+                throw new IdentityException(result.ToString(), result.Errors);
         }
 
         private async Task<string> GetTokenAsync(User user)
