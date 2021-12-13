@@ -27,7 +27,7 @@ namespace CountriesGame.Web.Controllers
                 return BadRequest("The countryName parameter is required.");
 
             var country = await _countryService.GetCountryAsync(countryName);
-            if (countryName == null)
+            if (country == null)
                 return NotFound();
 
             return country;
