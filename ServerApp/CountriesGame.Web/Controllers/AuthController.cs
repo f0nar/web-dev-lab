@@ -1,4 +1,5 @@
 using System;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using CountriesGame.Bll.DTOs;
 using CountriesGame.Bll.Services.Interfaces;
@@ -34,8 +35,12 @@ namespace CountriesGame.Web.Controllers
         [HttpPost("changepassword")]
         public async Task<IActionResult> ChangePasswordAsync(ChangePasswordDto changePasswordDto)
         {
-            await _authService.ChangePasswordAsync(changePasswordDto);
-            await _authService.ConfirmPassword(changePasswordDto.Id);
+            var userId = HttpContext.User?.FindFirst(ClaimTypes.NameIdentifier).Value;
+            if (userId == null)
+                return StatusCode(401);
+
+            await _authService.ChangePasswordAsync(changePasswordDto, userId);
+            await _authService.ConfirmPassword(userId);
 
             return Ok();
         }
