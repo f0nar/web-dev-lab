@@ -15,6 +15,8 @@ namespace CountriesGame.Bll.Infrastructure
 
             services.AddAutoMapper(typeof(BetweenDalAndBllMapperProfile));
 
+            services.AddTransient<IDataSeeder, DataSeeder>();
+
             services.Configure<AuthOptions>(configuration.GetSection("AuthOptions"));
 
             services.AddTransient<IAuthService, AuthService>();
