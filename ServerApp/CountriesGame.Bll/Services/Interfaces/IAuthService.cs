@@ -5,7 +5,7 @@ namespace CountriesGame.Bll.Services.Interfaces
 {
     public interface IAuthService
     {
-        Task<UserDto> RegisterAsync(RegisterDto registerDto);
+        Task<UserDto> RegisterAsync(RegisterDto registerDto, string headId = null);
 
         Task<string> LoginAsync(LoginDto loginDto);
 
