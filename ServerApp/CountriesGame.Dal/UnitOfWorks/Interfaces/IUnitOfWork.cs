@@ -11,6 +11,8 @@ namespace CountriesGame.Dal.UnitOfWorks.Interfaces
 
         IUserRepository Users { get; }
 
+        IQuizRepository Quizzes { get; }
+
         Task SaveChangesAsync();
     }
 }
