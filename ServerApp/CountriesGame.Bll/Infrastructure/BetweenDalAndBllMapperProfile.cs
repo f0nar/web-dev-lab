@@ -11,6 +11,10 @@ namespace CountriesGame.Bll.Infrastructure
             CreateCountryMap();
             CreateLinkMap();
             CreateUserMap();
+
+            CreateQuizMap();
+            CreateQuestionMap();
+            CreateOptionMap();
         }
 
         private void CreateCountryMap()
@@ -29,6 +33,22 @@ namespace CountriesGame.Bll.Infrastructure
             CreateMap<LoginDto, User>();
             CreateMap<RegisterDto, User>();
             CreateMap<ChangePasswordDto, User>();
+        }
+
+        private void CreateQuizMap()
+        {
+            CreateMap<Quiz, QuizDto>();
+        }
+
+        private void CreateQuestionMap()
+        {
+            CreateMap<Question, QuestionDto>();
+            CreateMap<QuestionType, QuestionTypeDto>();
+        }
+
+        private void CreateOptionMap()
+        {
+            CreateMap<Option, OptionDto>();
         }
     }
 }
