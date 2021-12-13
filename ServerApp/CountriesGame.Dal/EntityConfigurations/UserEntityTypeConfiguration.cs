@@ -19,7 +19,7 @@ namespace CountriesGame.Dal.EntityConfigurations
             builder.HasOne(u => u.Head)
                 .WithMany(u => u.SubUsers)
                 .HasForeignKey(u => u.HeadId)
-                .OnDelete(DeleteBehavior.SetNull);
+                .OnDelete(DeleteBehavior.NoAction);
         }
     }
 }
