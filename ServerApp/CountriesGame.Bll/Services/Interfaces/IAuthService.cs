@@ -11,7 +11,7 @@ namespace CountriesGame.Bll.Services.Interfaces
 
         Task<bool> IsInRoleAsync(string userId, string role);
 
-        Task ChangePasswordAsync(ChangePasswordDto changePasswordDto);
+        Task ChangePasswordAsync(ChangePasswordDto changePasswordDto, string userId);
 
         Task ConfirmPassword(string userId);
     }

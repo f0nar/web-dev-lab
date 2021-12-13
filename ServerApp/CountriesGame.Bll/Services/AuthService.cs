@@ -95,12 +95,14 @@ namespace CountriesGame.Bll.Services
             return await _userManager.IsInRoleAsync(user, role);
         }
 
-        public async Task ChangePasswordAsync(ChangePasswordDto changePasswordDto)
+        public async Task ChangePasswordAsync(ChangePasswordDto changePasswordDto, string userId)
         {
             if (changePasswordDto == null)
                 throw new ArgumentNullException(nameof(changePasswordDto));
+            if (userId == null)
+                throw new ArgumentNullException(nameof(userId));
 
-            var user = await _userManager.FindByIdAsync(changePasswordDto.Id);
+            var user = await _userManager.FindByIdAsync(userId);
             if (user == null)
                 throw new EntityNotFoundException("User with specified Id not found");
 
