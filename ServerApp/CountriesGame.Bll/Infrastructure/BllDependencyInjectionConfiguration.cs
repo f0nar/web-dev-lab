@@ -23,6 +23,7 @@ namespace CountriesGame.Bll.Infrastructure
             services.AddTransient<ICountryService, CountryService>();
             services.AddTransient<ILinkService, LinkService>();
             services.AddTransient<IUserService, UserService>();
+            services.AddTransient<IQuizService, QuizService>();
 
             return services;
         }
