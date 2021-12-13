@@ -22,5 +22,11 @@ namespace CountriesGame.Dal.DbContext
         public DbSet<Country> Countries { get; set; }
 
         public DbSet<Link> Links { get; set; } 
+
+        public DbSet<Quiz> Quizzes { get; set; }
+
+        public DbSet<Question> Questions { get; set; }
+
+        public DbSet<Option> Options { get; set; }
     }
 }
