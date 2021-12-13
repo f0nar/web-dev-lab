@@ -16,7 +16,10 @@ namespace CountriesGame.Dal.DbContext
 
             builder.ApplyConfiguration(new CountryEntityTypeConfiguration())
                 .ApplyConfiguration(new LinkEntityTypeConfiguration())
-                .ApplyConfiguration(new UserEntityTypeConfiguration());
+                .ApplyConfiguration(new UserEntityTypeConfiguration())
+                .ApplyConfiguration(new QuizEntityTypeConfiguration())
+                .ApplyConfiguration(new QuestionEntityTypeConfiguration())
+                .ApplyConfiguration(new OptionEntityTypeConfiguration());
         }
 
         public DbSet<Country> Countries { get; set; }
