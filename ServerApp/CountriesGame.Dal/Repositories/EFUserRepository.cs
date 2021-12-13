@@ -28,6 +28,7 @@ namespace CountriesGame.Dal.Repositories
 
             var user = await _context.Users
                 .Include(u => u.Head)
+                .Include(u => u.SubUsers)
                 .FirstOrDefaultAsync(u => u.Id == userId);
 
             if (user == null)
@@ -35,6 +36,13 @@ namespace CountriesGame.Dal.Repositories
 
             if (user.Head != null)
                 user.Head.SubUsers = null;
+            if (user.SubUsers != null)
+            {
+                foreach (var sub in user.SubUsers)
+                {
+                    sub.Head = null;
+                }
+            }
 
             return user;
         }
