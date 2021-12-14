@@ -4,7 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using CountriesGame.Bll.DTOs;
+using CountriesGame.Bll.Exceptions;
 using CountriesGame.Bll.Extentions;
+using CountriesGame.Dal.Entities;
 using CountriesGame.Dal.FileReaders.Interfaces;
 using CountriesGame.Dal.UnitOfWorks.Interfaces;
 
@@ -71,6 +73,52 @@ namespace CountriesGame.Bll.Services.Interfaces
             var quizDtos = _mapper.Map<IEnumerable<QuizDto>>(quizzes);
 
             return quizDtos;
+        }
+
+        public async Task<int> GetQuizResultAsync(NewSubmittedQuizDto submittedQuiz, string userId)
+        {
+            if (submittedQuiz == null)
+                throw new ArgumentNullException(nameof(submittedQuiz));
+            if (userId == null)
+                throw new ArgumentNullException(nameof(userId));
+
+            int totalScore = 0;
+
+            foreach (var sQuestion in submittedQuiz.SubmittedQuestions)
+            {
+                var question = await _db.Questions.GetAsync(sQuestion.QuestionId);
+                if (question == null)
+                    throw new EntityNotFoundException("Question with specified id is not found");
+
+                var questionScore = 0;
+                if (question.Type != QuestionType.FindMatches)
+                {
+                    foreach (var sOption in sQuestion.SubmittedOptions)
+                    {
+                        var option = await _db.Options.GetAsync(sOption.OptionId);
+                        if (option == null)
+                            throw new EntityNotFoundException("Option with specified id is not found");
+
+                        if (!option.IsCorrect.Value)
+                            questionScore--;
+                        questionScore++;
+                    }
+                }
+                else
+                {
+                    foreach (var sOption in sQuestion.SubmittedOptions)
+                    {
+                        var option = await _db.Options.GetAsync(sOption.OptionId);
+                        if (option == null)
+                            throw new EntityNotFoundException("Option with specified id is not found");
+                        if (option.MatchContent == sOption.MatchContent)
+                            questionScore++;
+                    }
+                }
+                totalScore += questionScore < 0 ? 0 : questionScore;
+            }
+
+            return totalScore;
         }
     }
 }
