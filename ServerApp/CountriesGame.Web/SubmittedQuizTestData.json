@@ -1,0 +1,67 @@
+{
+    "quizId": "1",
+    "submittedQuestions": [
+        {
+            "questionId": "1",
+            "submittedOptions": [
+                {
+                    "optionId": "1.2"
+                }
+            ]
+        },
+        {
+            "questionId": "2",
+            "submittedOptions": [
+                {
+                    "optionId": "2.2"
+                },
+                {
+                    "optionId": "2.3"
+                }
+            ]
+        },
+        {
+            "questionId": "3",
+            "submittedOptions": [
+                {
+                    "optionId": "3.1"
+                },
+                {
+                    "optionId": "3.3"
+                }
+            ]
+        },
+        {
+            "questionId": "4",
+            "submittedOptions": [
+                {
+                    "optionId": "4.3"
+                },
+                {
+                    "optionId": "4.4"
+                }
+            ]
+        },
+        {
+            "questionId": "5",
+            "submittedOptions": [
+                {
+                    "optionId": "5.1",
+                    "matchContent": "Kyiv"
+                },
+                {
+                    "optionId": "5.2",
+                    "matchContent": "Oslo"
+                },
+                {
+                    "optionId": "5.3",
+                    "matchContent": "Minsk"
+                },
+                {
+                    "optionId": "5.4",
+                    "matchContent": "Belgrade"
+                }
+            ]
+        }
+    ]
+}
