@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using CountriesGame.Bll.DTOs;
 using CountriesGame.Bll.Services.Interfaces;
@@ -39,6 +40,17 @@ namespace CountriesGame.Web.Controllers
         {
             var quizzes = await _quizService.GetQuizzesAsync();
             return quizzes;
+        }
+
+        [HttpPost("submit")]
+        public async Task<ActionResult<int>> SubmitAnswers(NewSubmittedQuizDto submittedQuiz)
+        {
+            var userId = HttpContext.User?.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            if (userId == null)
+                return StatusCode(401);
+
+            var score = await _quizService.GetQuizResultAsync(submittedQuiz, userId);
+            return score;
         }
     }
 }
