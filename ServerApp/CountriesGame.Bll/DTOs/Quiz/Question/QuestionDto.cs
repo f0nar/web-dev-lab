@@ -10,8 +10,6 @@ namespace CountriesGame.Bll.DTOs
 
         public QuestionTypeDto Type { get; set; }
 
-        public int Points { get; set; }
-
         public string QuizId { get; set; }
 
         public QuizDto Quiz { get; set; }
