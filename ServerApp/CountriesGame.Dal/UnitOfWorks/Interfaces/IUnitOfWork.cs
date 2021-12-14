@@ -13,6 +13,10 @@ namespace CountriesGame.Dal.UnitOfWorks.Interfaces
 
         IQuizRepository Quizzes { get; }
 
+        IQuestionRepository Questions { get; }
+
+        IOptionRepository Options { get; }
+
         Task SaveChangesAsync();
     }
 }
