@@ -16,5 +16,7 @@ namespace CountriesGame.Dal.Entities
         public User Head { get; set; }
 
         public IEnumerable<User> SubUsers { get; set; }
+
+        public IEnumerable<SubmittedQuiz> SubmittedQuizzes { get; set; }
     }
 }
