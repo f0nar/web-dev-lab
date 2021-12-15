@@ -1,14 +1,14 @@
 [
     {
         "Id": "1",
-        "UserName": "SmithSigrid",
+        "UserName": "lecturer1",
         "FirstName": "Sigrid",
         "LastName": "Smith",
         "PasswordConfirmed": true
     },
     {
         "Id": "2",
-        "UserName": "BobovBob",
+        "UserName": "student1",
         "FirstName": "Bob",
         "LastName": "Bobov",
         "PasswordConfirmed": false,
@@ -16,7 +16,7 @@
     },
     {
         "Id": "3",
-        "UserName": "FisherLee",
+        "UserName": "student2",
         "FirstName": "Lee",
         "LastName": "Fisher",
         "PasswordConfirmed": false,
@@ -24,7 +24,7 @@
     },
     {
         "Id": "4",
-        "UserName": "KleinCherry",
+        "UserName": "student3",
         "FirstName": "Cherry",
         "LastName": "Klein",
         "PasswordConfirmed": true,
@@ -32,7 +32,7 @@
     },
     {
         "Id": "5",
-        "UserName": "HerreraDiaz",
+        "UserName": "student4",
         "FirstName": "Diaz",
         "LastName": "Herrera",
         "PasswordConfirmed": true,
