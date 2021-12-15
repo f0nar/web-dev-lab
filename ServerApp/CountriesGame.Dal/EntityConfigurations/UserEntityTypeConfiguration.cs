@@ -20,6 +20,10 @@ namespace CountriesGame.Dal.EntityConfigurations
                 .WithMany(u => u.SubUsers)
                 .HasForeignKey(u => u.HeadId)
                 .OnDelete(DeleteBehavior.NoAction);
+
+            builder.HasMany(u => u.SubmittedQuizzes)
+                .WithOne(sq => sq.User)
+                .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }
