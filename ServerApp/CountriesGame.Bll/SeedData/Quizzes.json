@@ -8,7 +8,6 @@
                 "Id": "1",
                 "Content": "What is the population of Belarus?",
                 "Type": 1,
-                "Points": 1,
                 "Options": [
                     {
                         "Id": "1.1",
@@ -36,7 +35,6 @@
                 "Id": "2",
                 "Content": "Which of the following are constituent countries of United Kingdom",
                 "Type": 2,
-                "Points": 1,
                 "Options": [
                     {
                         "Id": "2.1",
@@ -64,7 +62,6 @@
                 "Id": "3",
                 "Content": "Which of the following are NOT constituent countries of United Kingdom",
                 "Type": 3,
-                "Points": 1,
                 "Options": [
                     {
                         "Id": "3.1",
@@ -92,7 +89,6 @@
                 "Id": "4",
                 "Content": "Choose all the correct options.",
                 "Type": 4,
-                "Points": 1,
                 "Options": [
                     {
                         "Id": "4.1",
@@ -120,7 +116,6 @@
                 "Id": "5",
                 "Content": "Match countries with their capitals",
                 "Type": 5,
-                "Points": 4,
                 "Options": [
                     {
                         "Id": "5.1",

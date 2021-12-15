@@ -16,9 +16,6 @@ namespace CountriesGame.Dal.EntityConfigurations
                 .HasConversion<int>()
                 .IsRequired();
 
-            builder.Property(q => q.Points)
-                .HasDefaultValue(0);
-
             builder.HasMany(q => q.Options)
                 .WithOne(o => o.Question)
                 .OnDelete(DeleteBehavior.Cascade);

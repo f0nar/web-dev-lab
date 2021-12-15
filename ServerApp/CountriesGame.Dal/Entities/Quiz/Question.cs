@@ -8,8 +8,6 @@ namespace CountriesGame.Dal.Entities
 
         public QuestionType Type { get; set; }
 
-        public int Points { get; set; }
-
         public string QuizId { get; set; }
 
         public Quiz Quiz { get; set; }
