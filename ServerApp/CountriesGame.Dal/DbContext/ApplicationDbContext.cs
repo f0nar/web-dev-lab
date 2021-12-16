@@ -19,7 +19,10 @@ namespace CountriesGame.Dal.DbContext
                 .ApplyConfiguration(new UserEntityTypeConfiguration())
                 .ApplyConfiguration(new QuizEntityTypeConfiguration())
                 .ApplyConfiguration(new QuestionEntityTypeConfiguration())
-                .ApplyConfiguration(new OptionEntityTypeConfiguration());
+                .ApplyConfiguration(new OptionEntityTypeConfiguration())
+                .ApplyConfiguration(new SubmittedQuizEntityTypeConfiguration())
+                .ApplyConfiguration(new SubmittedQuestionEntityTypeConfiguration())
+                .ApplyConfiguration(new SubmittedOptionEntityTypeConfiguration());
         }
 
         public DbSet<Country> Countries { get; set; }
@@ -31,5 +34,11 @@ namespace CountriesGame.Dal.DbContext
         public DbSet<Question> Questions { get; set; }
 
         public DbSet<Option> Options { get; set; }
+
+        public DbSet<SubmittedQuiz> SubmittedQuizzes { get; set; }
+
+        public DbSet<SubmittedQuestion> SubmittedQuestions { get; set; }
+
+        public DbSet<SubmittedOption> SubmittedOptions { get; set; }
     }
 }
