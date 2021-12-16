@@ -17,6 +17,8 @@ namespace CountriesGame.Dal.UnitOfWorks.Interfaces
 
         IOptionRepository Options { get; }
 
+        ISubmittedQuizRepository SubmittedQuizzes { get; }
+
         Task SaveChangesAsync();
     }
 }

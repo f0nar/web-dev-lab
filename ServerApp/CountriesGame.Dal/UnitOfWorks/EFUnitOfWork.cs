@@ -17,6 +17,7 @@ namespace CountriesGame.Dal.UnitOfWorks
         private IQuizRepository _quizRepository;
         private IQuestionRepository _questionRepository;
         private IOptionRepository _optionRepository;
+        private ISubmittedQuizRepository _submittedQuizRepository;
 
         public EFUnitOfWork(ApplicationDbContext context)
         {
@@ -43,6 +44,9 @@ namespace CountriesGame.Dal.UnitOfWorks
 
         public IOptionRepository Options =>
             _optionRepository ??= new EFOptionRepository(_context);
+
+        public ISubmittedQuizRepository SubmittedQuizzes =>
+            _submittedQuizRepository ??= new EFSubmittedQuizRepository(_context);
 
         public async Task SaveChangesAsync()
         {
