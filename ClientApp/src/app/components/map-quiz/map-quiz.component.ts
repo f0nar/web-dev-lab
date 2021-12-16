@@ -26,7 +26,7 @@ export class MapQuizComponent implements OnInit {
     const dialogRef = this.dialogService.open(QuizPanelComponent, {
       header: 'Quiz',
       showHeader: true,
-      width: '25%',
+      width: '40%',
       data: { tests: this.quizTests }
     });
     dialogRef.onClose.subscribe(answersNumber => console.log('correct answers number: ', answersNumber));

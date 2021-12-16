@@ -1,0 +1,15 @@
+.title_question{
+  font-size: 25px;
+  margin: 0 0 15px 0;
+}
+.block_btn{
+  display: flex;
+  justify-content: space-evenly;
+}
+.block_answer{
+  margin-bottom: 10px;
+  &_title{
+    margin-left: 7px;
+    font-size: 20px;
+  }
+}
