@@ -10,6 +10,8 @@ namespace CountriesGame.Bll.Services.Interfaces
 
         Task<IEnumerable<QuizDto>> GetQuizzesAsync();
 
-        Task<int> GetQuizResultAsync(NewSubmittedQuizDto submittedQuiz, string userId);
+        Task<int> GetQuizResultAsync(NewSubmittedQuizDto submittedQuizDto, string userId);
+
+        Task SaveQuizResultAsync(NewSubmittedQuizDto submittedQuizDto, string userId);
     }
 }
