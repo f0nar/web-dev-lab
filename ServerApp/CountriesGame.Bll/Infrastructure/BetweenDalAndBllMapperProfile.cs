@@ -15,6 +15,9 @@ namespace CountriesGame.Bll.Infrastructure
             CreateQuizMap();
             CreateQuestionMap();
             CreateOptionMap();
+            CreateSubmittedQuizMap();
+            CreateSubmittedQuestionMap();
+            CreateSubmittedOptionMap();
         }
 
         private void CreateCountryMap()
@@ -49,6 +52,21 @@ namespace CountriesGame.Bll.Infrastructure
         private void CreateOptionMap()
         {
             CreateMap<Option, OptionDto>();
+        }
+
+        private void CreateSubmittedQuizMap()
+        {
+            CreateMap<SubmittedQuiz, NewSubmittedQuizDto>().ReverseMap();
+        }
+
+        private void CreateSubmittedQuestionMap()
+        {
+            CreateMap<SubmittedQuestion, NewSubmittedQuestionDto>().ReverseMap();
+        }
+
+        private void CreateSubmittedOptionMap()
+        {
+            CreateMap<SubmittedOption, NewSubmittedOptionDto>().ReverseMap();
         }
     }
 }
