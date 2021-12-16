@@ -24,6 +24,7 @@ namespace CountriesGame.Bll.Infrastructure
             services.AddTransient<ILinkService, LinkService>();
             services.AddTransient<IUserService, UserService>();
             services.AddTransient<IQuizService, QuizService>();
+            services.AddTransient<IStatisticService, StatisticService>();
 
             return services;
         }
