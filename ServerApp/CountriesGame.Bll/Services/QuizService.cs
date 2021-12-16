@@ -84,8 +84,20 @@ namespace CountriesGame.Bll.Services.Interfaces
 
             int totalScore = 0;
 
+            var questionDublicatesIncluded = submittedQuizDto.SubmittedQuestions
+                .GroupBy(sq => sq.QuestionId)
+                .Any(g => g.Count() > 1);
+            if (questionDublicatesIncluded)
+                throw new DublicateFoundException("Submitted quiz includes dublicated questions");
+
             foreach (var sQuestion in submittedQuizDto.SubmittedQuestions)
             {
+                var optionDublicatesIncluded = sQuestion.SubmittedOptions
+                .GroupBy(sq => sq.OptionId)
+                .Any(g => g.Count() > 1);
+                if (optionDublicatesIncluded)
+                    throw new DublicateFoundException("Submitted quiz includes dublicated options");
+
                 var question = await _db.Questions.GetAsync(sQuestion.QuestionId);
                 if (question == null)
                     throw new EntityNotFoundException("Question with specified id is not found");
@@ -134,7 +146,5 @@ namespace CountriesGame.Bll.Services.Interfaces
             await _db.SubmittedQuizzes.AddAsync(submittedQuiz);
             await _db.SaveChangesAsync();
         }
-
-        //public async Task<>
     }
 }
