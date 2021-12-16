@@ -6,6 +6,7 @@ using CountriesGame.Bll.DTOs;
 using CountriesGame.Bll.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
+using Microsoft.AspNetCore.Authorization;
 
 namespace CountriesGame.Web.Controllers
 {
@@ -28,19 +29,27 @@ namespace CountriesGame.Web.Controllers
         }
 
         [HttpGet("{userId}")]
+        [Authorize(Roles = "Lecturer, Student")]
         public async Task<ActionResult<UserDto>> GetUser(string userId)
         {
             if (string.IsNullOrEmpty(userId))
                 return BadRequest("The userId parameter is required.");
 
-            var user = await _userService.GetUserAsync(userId);
-            if (user == null)
-                return NotFound();
+            var currentUserId = HttpContext.User?.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            if (currentUserId == userId ||
+                await _authService.IsInRoleAsync(currentUserId, "Lecturer"))
+            {
+                var user = await _userService.GetUserAsync(userId);
+                if (user == null)
+                    return NotFound();
 
-            return user;
+                return user;
+            }
+            return Forbid();
         }
 
         [HttpGet]
+        [Authorize(Roles = "Lecturer")]
         public async Task<ActionResult<List<UserDto>>> GetUserByHeadId()
         {
             var headId = HttpContext.User?.FindFirst(ClaimTypes.NameIdentifier)?.Value;
@@ -52,6 +61,7 @@ namespace CountriesGame.Web.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Lecturer")]
         public async Task<IActionResult> AddUser(RegisterDto registerDto)
         {
             var headId = HttpContext.User?.FindFirst(ClaimTypes.NameIdentifier).Value;

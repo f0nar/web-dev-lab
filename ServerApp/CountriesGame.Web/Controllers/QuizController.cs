@@ -4,12 +4,14 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using CountriesGame.Bll.DTOs;
 using CountriesGame.Bll.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CountriesGame.Web.Controllers
 {
     [ApiController]
     [Route("api/quizzes")]
+    [Authorize]
     public class QuizController : ControllerBase
     {
         private readonly IQuizService _quizService;
@@ -50,6 +52,7 @@ namespace CountriesGame.Web.Controllers
                 return StatusCode(401);
 
             var score = await _quizService.GetQuizResultAsync(submittedQuiz, userId);
+            await _quizService.SaveQuizResultAsync(submittedQuiz, userId);
             return score;
         }
     }

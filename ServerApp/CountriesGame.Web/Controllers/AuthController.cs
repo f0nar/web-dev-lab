@@ -3,6 +3,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using CountriesGame.Bll.DTOs;
 using CountriesGame.Bll.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CountriesGame.Web.Controllers
@@ -33,6 +34,7 @@ namespace CountriesGame.Web.Controllers
         }
 
         [HttpPost("changepassword")]
+        [Authorize]
         public async Task<IActionResult> ChangePasswordAsync(ChangePasswordDto changePasswordDto)
         {
             var userId = HttpContext.User?.FindFirst(ClaimTypes.NameIdentifier).Value;
