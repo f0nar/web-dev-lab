@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using CountriesGame.Web.Extensions;
+using CountriesGame.Web.Middlewares;
 
 namespace CountriesGame.Web
 {
@@ -41,6 +42,12 @@ namespace CountriesGame.Web
             {
                 app.UseDeveloperExceptionPage();
             }
+            else
+            {
+                app.UseMiddleware<ApiExceptionHandlingMiddleware>();
+            }
+            // TODO: Comment this line
+            app.UseMiddleware<ApiExceptionHandlingMiddleware>();
 
             app.UseRouting();
 
