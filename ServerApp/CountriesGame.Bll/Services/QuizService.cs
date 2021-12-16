@@ -40,7 +40,7 @@ namespace CountriesGame.Bll.Services.Interfaces
             if (id == null)
                 throw new ArgumentNullException(nameof(id));
 
-            var quiz = await _db.Quizzes.GetAsync(id);
+            var quiz = await _db.Quizzes.GetAsync(id, true);
             if (quiz == null)
                 return null;
 
@@ -75,16 +75,16 @@ namespace CountriesGame.Bll.Services.Interfaces
             return quizDtos;
         }
 
-        public async Task<int> GetQuizResultAsync(NewSubmittedQuizDto submittedQuiz, string userId)
+        public async Task<int> GetQuizResultAsync(NewSubmittedQuizDto submittedQuizDto, string userId)
         {
-            if (submittedQuiz == null)
-                throw new ArgumentNullException(nameof(submittedQuiz));
+            if (submittedQuizDto == null)
+                throw new ArgumentNullException(nameof(submittedQuizDto));
             if (userId == null)
                 throw new ArgumentNullException(nameof(userId));
 
             int totalScore = 0;
 
-            foreach (var sQuestion in submittedQuiz.SubmittedQuestions)
+            foreach (var sQuestion in submittedQuizDto.SubmittedQuestions)
             {
                 var question = await _db.Questions.GetAsync(sQuestion.QuestionId);
                 if (question == null)
@@ -120,5 +120,21 @@ namespace CountriesGame.Bll.Services.Interfaces
 
             return totalScore;
         }
+
+        public async Task SaveQuizResultAsync(NewSubmittedQuizDto submittedQuizDto, string userId)
+        {
+            if (submittedQuizDto == null)
+                throw new ArgumentNullException(nameof(submittedQuizDto));
+            if (userId == null)
+                throw new ArgumentNullException(nameof(userId));
+
+            var submittedQuiz = _mapper.Map<SubmittedQuiz>(submittedQuizDto);
+            submittedQuiz.UserId = userId;
+
+            await _db.SubmittedQuizzes.AddAsync(submittedQuiz);
+            await _db.SaveChangesAsync();
+        }
+
+        //public async Task<>
     }
 }

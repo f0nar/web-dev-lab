@@ -40,7 +40,7 @@ namespace CountriesGame.Bll.Services
             if (headId == null)
                 throw new ArgumentNullException(nameof(headId));
 
-            var users = await _db.Users.GetByHeadIdAsync(headId);
+            var users = await _db.Users.GetByHeadIdAsync(headId, true);
             var userDtos = _mapper.Map<IEnumerable<UserDto>>(users);
 
             return userDtos;

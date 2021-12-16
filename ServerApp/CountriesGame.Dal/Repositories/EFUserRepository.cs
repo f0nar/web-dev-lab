@@ -47,14 +47,16 @@ namespace CountriesGame.Dal.Repositories
             return user;
         }
 
-        public async Task<IEnumerable<User>> GetByHeadIdAsync(string headId)
+        public async Task<IEnumerable<User>> GetByHeadIdAsync(string headId, bool relatedData = false)
         {
             if (headId == null)
                 throw new ArgumentNullException(nameof(headId));
 
-            var query = _context.Users
-                .Where(u => u.HeadId == headId)
-                .Include(u => u.Head);
+            IQueryable<User> query = _context.Users
+                .Where(u => u.HeadId == headId);
+
+            if (relatedData)
+                query = query.Include(u => u.Head);
 
             await query.ForEachAsync(u =>
             {

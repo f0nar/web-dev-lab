@@ -8,6 +8,6 @@ namespace CountriesGame.Dal.Repositories.Interfaces
     {
         Task<User> GetAsync(string userId);
 
-        Task<IEnumerable<User>> GetByHeadIdAsync(string headId);
+        Task<IEnumerable<User>> GetByHeadIdAsync(string headId, bool relatedData = false);
     }
 }

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using CountriesGame.Dal.DbContext;
 using CountriesGame.Dal.Entities;
@@ -20,14 +21,19 @@ namespace CountriesGame.Dal.Repositories
             _context = context;
         }
         
-        public async Task<Quiz> GetAsync(string id)
+        public async Task<Quiz> GetAsync(string id, bool relatedData = false)
         {
             if (id == null)
                 throw new ArgumentNullException(nameof(id));
 
-            var quiz = await _context.Quizzes
-                .Include(q => q.Questions)
-                .ThenInclude(q => q.Options)
+            IQueryable<Quiz> query = _context.Quizzes;
+            if (relatedData)
+            {
+                query = query.Include(q => q.Questions)
+                    .ThenInclude(q => q.Options);
+            }
+
+            var quiz = await query
                 .FirstOrDefaultAsync(q => q.Id == id);
             if (quiz == null)
                 return null;
