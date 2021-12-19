@@ -132,7 +132,11 @@ namespace CountriesGame.Bll.Services
             var claims = new List<Claim>
             {
                 new Claim(ClaimTypes.NameIdentifier, user.Id),
-                new Claim(ClaimTypes.Name, user.UserName)
+                new Claim(ClaimTypes.Name, user.UserName),
+                new Claim("FirstName", user.FirstName),
+                new Claim("LastName", user.LastName),
+                new Claim("PasswordConfirmed", user.PasswordConfirmed.ToString()),
+                new Claim("HeadId", user.HeadId)
             };
 
             var roles = await _userManager.GetRolesAsync(user);
