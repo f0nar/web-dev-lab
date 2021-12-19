@@ -31,6 +31,8 @@ namespace CountriesGame.Web
                 .AddJsonOptions(options =>
                     options.JsonSerializerOptions.IgnoreNullValues = true);
 
+            services.AddCors();
+
             services.ConfigureSwagger();
 
             services.ConfigureAuthentication(_configuration);
@@ -48,6 +50,11 @@ namespace CountriesGame.Web
             }
             // TODO: Comment this line
             app.UseMiddleware<ApiExceptionHandlingMiddleware>();
+
+            app.UseCors(options => options
+                .AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader());
 
             app.UseRouting();
 
