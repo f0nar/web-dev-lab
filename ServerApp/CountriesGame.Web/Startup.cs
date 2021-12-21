@@ -51,7 +51,7 @@ namespace CountriesGame.Web
             // TODO: Comment this line
             app.UseMiddleware<ApiExceptionHandlingMiddleware>();
 
-            app.UseCors(x => x
+            app.UseCors(options => options
                 .AllowAnyOrigin()
                 .AllowAnyMethod()
                 .AllowAnyHeader());
