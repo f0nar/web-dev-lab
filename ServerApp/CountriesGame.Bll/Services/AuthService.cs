@@ -133,10 +133,10 @@ namespace CountriesGame.Bll.Services
             {
                 new Claim(ClaimTypes.NameIdentifier, user.Id),
                 new Claim(ClaimTypes.Name, user.UserName),
-                new Claim("FirstName", user.FirstName),
-                new Claim("LastName", user.LastName),
+                new Claim("FirstName", user.FirstName ?? string.Empty),
+                new Claim("LastName", user.LastName ?? string.Empty),
                 new Claim("PasswordConfirmed", user.PasswordConfirmed.ToString()),
-                new Claim("HeadId", user.HeadId)
+                new Claim("HeadId", user.HeadId ?? string.Empty)
             };
 
             var roles = await _userManager.GetRolesAsync(user);

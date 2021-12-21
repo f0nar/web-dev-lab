@@ -49,7 +49,7 @@ namespace CountriesGame.Web
                 app.UseMiddleware<ApiExceptionHandlingMiddleware>();
             }
             // TODO: Comment this line
-            app.UseMiddleware<ApiExceptionHandlingMiddleware>();
+            //app.UseMiddleware<ApiExceptionHandlingMiddleware>();
 
             app.UseCors(options => options
                 .AllowAnyOrigin()
