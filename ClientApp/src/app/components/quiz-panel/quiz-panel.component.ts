@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DynamicDialogRef } from 'primeng/dynamicdialog';
 import { DynamicDialogConfig } from 'primeng/dynamicdialog';
-import { QuizTest } from 'src/app/common/QuizTest';
+import { IQuiz } from 'src/app/common/QuizTest';
+import { QuizService } from 'src/app/services/quiz.service';
 
 @Component({
   templateUrl: './quiz-panel.component.html',
@@ -9,12 +10,15 @@ import { QuizTest } from 'src/app/common/QuizTest';
 })
 export class QuizPanelComponent implements OnInit {
 
-  public tests: QuizTest[] = [];
+  public tests: IQuiz[] = [];
   public correctAnswers = 0;
   public testIndex = -1;
   public selectedAnswers: string[] = [];
 
-  constructor(public ref: DynamicDialogRef, public config: DynamicDialogConfig) { }
+  constructor(
+    public ref: DynamicDialogRef,
+    public config: DynamicDialogConfig,
+    public quizService: QuizService) { }
 
   ngOnInit(): void {
     this.tests = this.config.data?.tests || [];
@@ -33,7 +37,7 @@ export class QuizPanelComponent implements OnInit {
 
   private aceptTask() {
     if (this.testIndex >= 0 && this.testIndex < (this.tests?.length || 0)) {
-      this.tests[this.testIndex].isCorrect(this.selectedAnswers) && ++this.correctAnswers;
+      //this.tests[this.testIndex].isCorrect(this.selectedAnswers) && ++this.correctAnswers;
       ++this.testIndex;
       this.selectedAnswers = [];
     }

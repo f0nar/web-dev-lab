@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DialogService } from 'primeng/dynamicdialog';
-import { QuizTest } from 'src/app/common/QuizTest';
+import { filter } from 'rxjs/operators';
+import { IQuiz } from 'src/app/common/QuizTest';
+//import { QuizTest } from 'src/app/common/QuizTest';
 import { QuizService } from '../../services/quiz.service';
 import { QuizPanelComponent } from '../quiz-panel/quiz-panel.component';
 
@@ -12,7 +14,7 @@ import { QuizPanelComponent } from '../quiz-panel/quiz-panel.component';
 })
 export class MapQuizComponent implements OnInit {
 
-  public quizTests: QuizTest[] = [];
+  public quizTests: IQuiz[] = [];
 
   constructor(
     private quizService: QuizService,
@@ -21,15 +23,18 @@ export class MapQuizComponent implements OnInit {
 
   ngOnInit(): void { }
 
-  public runQuiz(countryName: string) {
-    this.quizTests = this.quizService.getTests(countryName);
-    const dialogRef = this.dialogService.open(QuizPanelComponent, {
-      header: 'Quiz',
-      showHeader: true,
-      width: '40%',
-      data: { tests: this.quizTests }
-    });
-    dialogRef.onClose.subscribe(answersNumber => console.log('correct answers number: ', answersNumber));
-  }
+  public runQuiz(quizId: string) {
+    this.quizService.getQuizz(quizId)
+      .pipe(filter(quiz => !!quiz))
+      .subscribe(quiz => {
+        const dialogRef = this.dialogService.open(QuizPanelComponent, {
+          header: 'Quiz',
+          showHeader: true,
+          width: '40%',
+          data: { tests: this.quizTests }
+        });
+        dialogRef.onClose.subscribe(answersNumber => console.log('correct answers number: ', answersNumber));    
+      })
+    }
 
 }

@@ -1,0 +1,12 @@
+
+<p-message *ngIf="error" severity="error" text="{{error}"></p-message>
+<div>
+    <label>Login: </label>
+    <input type="text" pInputText [(ngModel)]="login">
+</div>
+<div>
+    <label>Password: </label>
+    <p-password [(ngModel)]="password" [toggleMask]="true"></p-password>
+</div>
+
+<p-button label="Submit" (onClick)="onSubmit()"></p-button>
