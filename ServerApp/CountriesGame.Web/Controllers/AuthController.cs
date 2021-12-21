@@ -30,7 +30,8 @@ namespace CountriesGame.Web.Controllers
             if (token == null)
                 return Unauthorized();
 
-            return Ok(token);
+            var ok = Ok(token);
+            return ok;
         }
 
         [HttpPost("changepassword")]

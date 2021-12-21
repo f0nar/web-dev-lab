@@ -15,7 +15,7 @@ namespace CountriesGame.Web.Extensions
             var authOptions = configuration.GetSection("AuthOptions")
                 .Get<AuthOptions>();
 
-            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+            services.AddAuthentication("OAuth")
                 .AddJwtBearer(options =>
                 {
                     options.TokenValidationParameters = new TokenValidationParameters()
