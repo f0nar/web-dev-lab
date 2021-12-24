@@ -5,6 +5,7 @@ import { IQuiz } from 'src/app/common/QuizTest';
 //import { QuizTest } from 'src/app/common/QuizTest';
 import { QuizService } from '../../services/quiz.service';
 import { QuizPanelComponent } from '../quiz-panel/quiz-panel.component';
+import { TheotyPanelComponent } from '../theoty-panel/theoty-panel.component';
 
 @Component({
   selector: 'map-quiz',
@@ -23,18 +24,13 @@ export class MapQuizComponent implements OnInit {
 
   ngOnInit(): void { }
 
-  public runQuiz(quizId: string) {
-    this.quizService.getQuizz(quizId)
-      .pipe(filter(quiz => !!quiz))
-      .subscribe(quiz => {
-        const dialogRef = this.dialogService.open(QuizPanelComponent, {
-          header: 'Quiz',
-          showHeader: true,
-          width: '40%',
-          data: { tests: this.quizTests }
-        });
-        dialogRef.onClose.subscribe(answersNumber => console.log('correct answers number: ', answersNumber));    
-      })
-    }
+  public showInfo(countryName: string) {
+    const dialogRef = this.dialogService.open(TheotyPanelComponent, {
+      header: 'Country info',
+      showHeader: true,
+      width: '40%',
+      data: { countryName }
+    });
+  }
 
 }

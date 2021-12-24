@@ -1,0 +1,8 @@
+<label *ngIf="links.length">Useful Links:</label>
+<div *ngFor="let link of links">
+    <a href="{{ link.url }}">{{ link.description }}</a>
+</div>
+<div *ngIf="flagLoaded">
+    <label>Flag</label>
+    <img style="width: 400px; height: 270px" src="{{finalpath}}"/><img>
+</div>

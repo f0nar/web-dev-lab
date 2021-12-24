@@ -20,7 +20,7 @@ export class CountriesService {
   }
 
   public getFlag(countryName: string): Observable<any> {
-    return this.get('flag', countryName);
+    return this.http.get(`${COUNTRIES_API}/flag/${countryName}`, { ...httpOptions, responseType: 'blob' });
   }
 
   public getCoat(countryName: string): Observable<any> {

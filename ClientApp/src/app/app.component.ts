@@ -13,7 +13,7 @@ import { StorageService } from './services/storage.service';
 export class AppComponent {
   
   ref: DynamicDialogRef | null = null;
-  private user: any;
+  user: any;
   
   constructor(
     public dialogService: DialogService,

@@ -1,9 +1,13 @@
 
 <p-toolbar>
     <div class="p-toolbar-group-right">
+        <label *ngIf="isLogged()">{{ user.FirstName + ' ' + user.LastName }}</label>
+    </div>
+    <div class="p-toolbar-group-right">
         <p-button *ngIf="isStudent()" label="Run test"></p-button>
         <p-button *ngIf="!isLogged()" label="Log in" (onClick)="login()"></p-button>
-        <p-button *ngIf="isLogged()" label="logout()" (onClick)="logout()"></p-button>
+        <p-button *ngIf="isLogged()" label="Log out" (onClick)="logout()"></p-button>
     </div>
 </p-toolbar>
+<map-quiz></map-quiz>
 <!-- <router-outlet></router-outlet> -->

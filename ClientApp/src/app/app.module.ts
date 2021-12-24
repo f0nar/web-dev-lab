@@ -26,6 +26,7 @@ import { errorInterceptorProviders } from './helpers/error.interceptor';
 import { appRoutingModule, routes } from './routes/routes';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import { TheotyPanelComponent } from './components/theoty-panel/theoty-panel.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { RouterModule } from '@angular/router';
     MapQuizComponent,
     QuizPanelComponent,
     LoginComponent,
+    TheotyPanelComponent,
   ],
   imports: [
     BrowserModule,
