@@ -88,6 +88,78 @@
                 "Description": "Youtube: Is Finland Really The Happiest Country In The World?"
             }
         ]
+    },
+    {
+        "Id": "6",
+        "CountryName": "Estonia",
+        "CapitalName": "Tallinn",
+        "FlagPath": "Files/Estonia/flag.svg",
+        "CoatPath": "Files/Estonia/coat.svg",
+        "AnthemPath": "Files/Estonia/anthem.mp3",
+        "Links": [
+            {
+                "Url": "https://en.wikipedia.org/wiki/Estonia",
+                "Description": "Wikipedia Link"
+            },
+            {
+                "Url": "https://www.youtube.com/watch?v=sh7W3kudseg",
+                "Description": "Youtube: Welcome to e-Estonia, the world's first digital nation!"
+            }
+        ]
+    },
+    {
+        "Id": "7",
+        "CountryName": "Latvia",
+        "CapitalName": "Riga",
+        "FlagPath": "Files/Latvia/flag.svg",
+        "CoatPath": "Files/Latvia/coat.svg",
+        "AnthemPath": "Files/Latvia/anthem.mp3",
+        "Links": [
+            {
+                "Url": "https://en.wikipedia.org/wiki/Latvia",
+                "Description": "Wikipedia Link"
+            },
+            {
+                "Url": "https://www.youtube.com/watch?v=F-icI_11rRs",
+                "Description": "Youtube: Top 10 Reasons to Visit Latvia | MojoTravels"
+            }
+        ]
+    },
+    {
+        "Id": "8",
+        "CountryName": "Lithuania",
+        "CapitalName": "Vilnius",
+        "FlagPath": "Files/Lithuania/flag.svg",
+        "CoatPath": "Files/Lithuania/coat.svg",
+        "AnthemPath": "Files/Lithuania/anthem.mp3",
+        "Links": [
+            {
+                "Url": "https://en.wikipedia.org/wiki/Lithuania",
+                "Description": "Wikipedia Link"
+            },
+            {
+                "Url": "https://www.youtube.com/watch?v=WH9mTk1mxkI",
+                "Description": "Youtube: What is LITHUANIA? (My Country You Know Nothing About)"
+            }
+        ]
+    },
+    {
+        "Id": "9",
+        "CountryName": "Belarus",
+        "CapitalName": "Minsk",
+        "FlagPath": "Files/Belarus/flag.svg",
+        "CoatPath": "Files/Belarus/coat.svg",
+        "AnthemPath": "Files/Belarus/anthem.mp3",
+        "Links": [
+            {
+                "Url": "https://en.wikipedia.org/wiki/Belarus",
+                "Description": "Wikipedia Link"
+            },
+            {
+                "Url": "https://www.youtube.com/watch?v=FBZtUODY2vI",
+                "Description": "Youtube: Belarus. Interesting Facts: Cities People & Nature"
+            }
+        ]
     }
 	
 ]
