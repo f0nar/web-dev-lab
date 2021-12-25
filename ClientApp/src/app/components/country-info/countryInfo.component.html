@@ -1,0 +1,28 @@
+<div style="margin-left: 15vw; margin-right: 15vw;">
+    <h1>Country: {{countryInfo?.countryName || "Loading..."}}</h1>
+    <h2>Capital: {{countryInfo?.capitalName || "Loading..."}}</h2>
+    <h2>Flag</h2>
+    <div>
+        <img id="flag" class="border rounded" [src]="sanitize(countryFlagSrc)" alt="Flag" *ngIf="!isCountryFlagLoading" />
+    </div>
+    <h2>Coat</h2>
+    <div>
+        <img id="coat" [src]="sanitize(countryCoatSrc)" alt="Coat" *ngIf="!isCountryCoatLoading" />
+    </div>
+    <figure *ngIf="!isCountryAnthemLoading">
+        <figcaption>
+            <h2>Listen to {{countryInfo?.countryName || "Country"}} Anthem!</h2>
+        </figcaption>
+        <audio [src]="sanitize(countryAnthemSrc)" controls="true">
+            Your browser does not support the <code>audio</code> element.
+        </audio>
+    </figure>
+    <div *ngIf="countryInfo?.links?.length">
+        <h3>
+            Learn more about {{countryInfo?.countryName || "Country"}}! Visit the following links!
+        </h3>
+        <div *ngFor="let link of countryInfo?.links">
+            <a [href]="link?.url" target="_blank">{{link?.description || link?.url}}</a>
+        </div>
+    </div>
+</div>
