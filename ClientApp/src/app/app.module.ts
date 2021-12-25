@@ -17,16 +17,13 @@ import { AppComponent } from './app.component';
 import { MapQuizComponent } from './components/map-quiz/map-quiz.component';
 import { QuizService } from './services/quiz.service';
 import { QuizPanelComponent } from './components/quiz-panel/quiz-panel.component';
-import { CountriesService } from './services/countries.service';
 import { StorageService } from './services/storage.service';
 import { AuthService } from './services/auth.service';
 import { LoginComponent } from './components/login/login.component';
 import { authInterceptorProviders } from './helpers/auth.interceptor';
-import { errorInterceptorProviders } from './helpers/error.interceptor';
-import { appRoutingModule, routes } from './routes/routes';
 import { HttpClientModule } from '@angular/common/http';
-import { RouterModule } from '@angular/router';
-import { TheotyPanelComponent } from './components/theoty-panel/theoty-panel.component';
+import { CountryService } from './services/country.service';
+import { CountryInfoComponent } from './components/country-info/countryInfo.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +31,7 @@ import { TheotyPanelComponent } from './components/theoty-panel/theoty-panel.com
     MapQuizComponent,
     QuizPanelComponent,
     LoginComponent,
-    TheotyPanelComponent,
+    CountryInfoComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +44,7 @@ import { TheotyPanelComponent } from './components/theoty-panel/theoty-panel.com
     PrimeNGCheckboxModule,
     PrimeNGDynamicDialogModule,
     PrimeNGToolbar,
-    PrimeNGPanelModule,
+    PrimeNGPanelModule, 
     PrimeNGInputTextModule,
     PrimeNGPasswordModule,
     PrimeNGMessageModule,
@@ -62,7 +59,7 @@ import { TheotyPanelComponent } from './components/theoty-panel/theoty-panel.com
     QuizService,
     StorageService,
     AuthService,
-    CountriesService,
+    CountryService,
     authInterceptorProviders,
     //errorInterceptorProviders
   ],
