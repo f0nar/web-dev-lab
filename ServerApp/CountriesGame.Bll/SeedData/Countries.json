@@ -5,6 +5,89 @@
         "CapitalName": "Kyiv",
         "FlagPath": "Files/Ukraine/flag.svg",
         "CoatPath": "Files/Ukraine/coat.svg",
-        "AnthemPath": "Files/Ukraine/anthem.mp3"
+        "AnthemPath": "Files/Ukraine/anthem.mp3",
+        "Links": [
+            {
+                "Url": "https://en.wikipedia.org/wiki/Ukraine",
+                "Description": "Wikipedia Link"
+            },
+            {
+                "Url": "https://www.youtube.com/watch?v=p5hyBDPDXys",
+                "Description": "Youtube: What is life like in Ukraine?"
+            }
+        ]
+    },
+	{
+        "Id": "2",
+        "CountryName": "Russia",
+        "CapitalName": "Moscow",
+        "FlagPath": "Files/Russia/flag.svg",
+        "CoatPath": "Files/Russia/coat.svg",
+        "AnthemPath": "Files/Russia/anthem.mp3",
+        "Links": [
+            {
+                "Url": "https://en.wikipedia.org/wiki/Russia",
+                "Description": "Wikipedia Link"
+            },
+            {
+                "Url": "https://www.youtube.com/watch?v=2pVu9PDhm2Y",
+                "Description": "Youtube: Habits you should adopt in Russia"
+            }
+        ]
+    },
+	{
+        "Id": "3",
+        "CountryName": "Norway",
+        "CapitalName": "Oslo",
+        "FlagPath": "Files/Norway/flag.svg",
+        "CoatPath": "Files/Norway/coat.svg",
+        "AnthemPath": "Files/Norway/anthem.mp3",
+        "Links": [
+            {
+                "Url": "https://en.wikipedia.org/wiki/Norway",
+                "Description": "Wikipedia Link"
+            },
+            {
+                "Url": "https://www.youtube.com/watch?v=2pVu9PDhm2Y",
+                "Description": "Youtube: Living in Norway - what it's really like?"
+            }
+        ]
+    },
+    {
+        "Id": "4",
+        "CountryName": "Sweden",
+        "CapitalName": "Stockholm",
+        "FlagPath": "Files/Sweden/flag.svg",
+        "CoatPath": "Files/Sweden/coat.svg",
+        "AnthemPath": "Files/Sweden/anthem.mp3",
+        "Links": [
+            {
+                "Url": "https://en.wikipedia.org/wiki/Sweden",
+                "Description": "Wikipedia Link"
+            },
+            {
+                "Url": "https://www.youtube.com/watch?v=3zTR4ayDG38",
+                "Description": "Youtube: Living with the Dark Winters in Sweden"
+            }
+        ]
+    },
+    {
+        "Id": "5",
+        "CountryName": "Finland",
+        "CapitalName": "Helsinki",
+        "FlagPath": "Files/Finland/flag.svg",
+        "CoatPath": "Files/Finland/coat.svg",
+        "AnthemPath": "Files/Finland/anthem.mp3",
+        "Links": [
+            {
+                "Url": "https://en.wikipedia.org/wiki/Finland",
+                "Description": "Wikipedia Link"
+            },
+            {
+                "Url": "https://www.youtube.com/watch?v=9FPU4F-Ajh8",
+                "Description": "Youtube: Is Finland Really The Happiest Country In The World?"
+            }
+        ]
     }
+	
 ]
