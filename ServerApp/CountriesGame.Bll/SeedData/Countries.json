@@ -286,6 +286,96 @@
                 "Description": "Youtube: Hungary: 10 Shocks of Visiting Hungary"
             }
         ]
+    },
+    {
+        "Id": "17",
+        "CountryName": "Portugal",
+        "CapitalName": "Lisbon",
+        "FlagPath": "Files/Portugal/flag.svg",
+        "CoatPath": "Files/Portugal/coat.svg",
+        "AnthemPath": "Files/Portugal/anthem.mp3",
+        "Links": [
+            {
+                "Url": "https://en.wikipedia.org/wiki/Portugal",
+                "Description": "Wikipedia Link"
+            },
+            {
+                "Url": "https://www.youtube.com/watch?v=Z8XP7UjzvnU",
+                "Description": "Youtube: 10 Best Places to Visit in Portugal - Travel Video"
+            }
+        ]
+    },
+    {
+        "Id": "18",
+        "CountryName": "Switzerland",
+        "CapitalName": "Bern",
+        "FlagPath": "Files/Switzerland/flag.svg",
+        "CoatPath": "Files/Switzerland/coat.svg",
+        "AnthemPath": "Files/Switzerland/anthem.mp3",
+        "Links": [
+            {
+                "Url": "https://en.wikipedia.org/wiki/Switzerland",
+                "Description": "Wikipedia Link"
+            },
+            {
+                "Url": "https://www.youtube.com/watch?v=sW3RfzWbJE8",
+                "Description": "Youtube: 30 Fun Facts About Switzerland That Are Totally True"
+            }
+        ]
+    },
+    {
+        "Id": "19",
+        "CountryName": "Germany",
+        "CapitalName": "Berlin",
+        "FlagPath": "Files/Germany/flag.svg",
+        "CoatPath": "Files/Germany/coat.svg",
+        "AnthemPath": "Files/Germany/anthem.mp3",
+        "Links": [
+            {
+                "Url": "https://en.wikipedia.org/wiki/Germany",
+                "Description": "Wikipedia Link"
+            },
+            {
+                "Url": "https://www.youtube.com/watch?v=IPbzWJNmndY",
+                "Description": "Youtube: 10 Best Places to Visit in Germany - Travel Video"
+            }
+        ]
+    },
+    {
+        "Id": "20",
+        "CountryName": "Slovakia",
+        "CapitalName": "Bratislava",
+        "FlagPath": "Files/Slovakia/flag.svg",
+        "CoatPath": "Files/Slovakia/coat.svg",
+        "AnthemPath": "Files/Slovakia/anthem.mp3",
+        "Links": [
+            {
+                "Url": "https://en.wikipedia.org/wiki/Slovakia",
+                "Description": "Wikipedia Link"
+            },
+            {
+                "Url": "https://www.youtube.com/watch?v=wZTQdRgfAX8",
+                "Description": "Youtube: First Thoughts on Slovakia | We Spent 48 Hours in Bratislava"
+            }
+        ]
+    },
+    {
+        "Id": "21",
+        "CountryName": "Austria",
+        "CapitalName": "Vienna",
+        "FlagPath": "Files/Austria/flag.svg",
+        "CoatPath": "Files/Austria/coat.svg",
+        "AnthemPath": "Files/Austria/anthem.mp3",
+        "Links": [
+            {
+                "Url": "https://en.wikipedia.org/wiki/Austria",
+                "Description": "Wikipedia Link"
+            },
+            {
+                "Url": "https://www.youtube.com/watch?v=dKTDQa20IEQ",
+                "Description": "Youtube: 10 Best Places to Visit in Austria - Travel Video"
+            }
+        ]
     }
 	
 ]
