@@ -250,6 +250,42 @@
                 "Description": "Youtube: 15 Things You Didn't Know About Moldova"
             }
         ]
+    },
+    {
+        "Id": "15",
+        "CountryName": "Romania",
+        "CapitalName": "Bucharest",
+        "FlagPath": "Files/Romania/flag.svg",
+        "CoatPath": "Files/Romania/coat.svg",
+        "AnthemPath": "Files/Romania/anthem.mp3",
+        "Links": [
+            {
+                "Url": "https://en.wikipedia.org/wiki/Romania",
+                "Description": "Wikipedia Link"
+            },
+            {
+                "Url": "https://www.youtube.com/watch?v=wxyhpDww1eY",
+                "Description": "Youtube: 10 Best Places to Visit in Romania - Travel Video"
+            }
+        ]
+    },
+    {
+        "Id": "16",
+        "CountryName": "Hungary",
+        "CapitalName": "Budapest",
+        "FlagPath": "Files/Hungary/flag.svg",
+        "CoatPath": "Files/Hungary/coat.svg",
+        "AnthemPath": "Files/Hungary/anthem.mp3",
+        "Links": [
+            {
+                "Url": "https://en.wikipedia.org/wiki/Hungary",
+                "Description": "Wikipedia Link"
+            },
+            {
+                "Url": "https://www.youtube.com/watch?v=aKhCuWHFIEk",
+                "Description": "Youtube: Hungary: 10 Shocks of Visiting Hungary"
+            }
+        ]
     }
 	
 ]
