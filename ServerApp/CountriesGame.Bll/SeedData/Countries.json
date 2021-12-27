@@ -376,6 +376,24 @@
                 "Description": "Youtube: 10 Best Places to Visit in Austria - Travel Video"
             }
         ]
+    },
+    {
+        "Id": "22",
+        "CountryName": "Luxembourg",
+        "CapitalName": "Luxembourg City",
+        "FlagPath": "Files/Luxembourg/flag.svg",
+        "CoatPath": "Files/Luxembourg/coat.svg",
+        "AnthemPath": "Files/Luxembourg/anthem.mp3",
+        "Links": [
+            {
+                "Url": "https://en.wikipedia.org/wiki/Luxembourg",
+                "Description": "Wikipedia Link"
+            },
+            {
+                "Url": "https://youtu.be/n0E_Q7ry7WY",
+                "Description": "Youtube: Luxembourg, Luxembourg - 4K UHD Drone Video"
+            }
+        ]
     }
 	
 ]
