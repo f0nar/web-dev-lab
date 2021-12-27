@@ -664,6 +664,24 @@
                 "Description": "Youtube: Slovenia 4K - Scenic Relaxation Film With Calming Music"
             }
         ]
+    },
+    {
+        "Id": "38",
+        "CountryName": "Czech republic",
+        "CapitalName": "Prague",
+        "FlagPath": "Files/Czech republic/flag.svg",
+        "CoatPath": "Files/Czech republic/coat.svg",
+        "AnthemPath": "Files/Czech republic/anthem.mp3",
+        "Links": [
+            {
+                "Url": "https://en.wikipedia.org/wiki/Czech_Republic",
+                "Description": "Wikipedia Link"
+            },
+            {
+                "Url": "https://www.youtube.com/watch?v=87GfE07QZdc&ab_channel=ALLin4K",
+                "Description": "Youtube: Prague, Czech Republic In 4K 🇨🇿"
+            }
+        ]
     }                              
 	
 ]
