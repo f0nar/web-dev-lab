@@ -486,7 +486,7 @@
         ]
     },
     {
-        "Id": "27",
+        "Id": "28",
         "CountryName": "Albania",
         "CapitalName": "Tirana",
         "FlagPath": "Files/Albania/flag.svg",
@@ -502,6 +502,168 @@
                 "Description": "Youtube: Amazing Places to visit in Albania - Travel Video"
             }
         ]
-    }              
+    },
+    {
+        "Id": "29",
+        "CountryName": "Kosovo",
+        "CapitalName": "Pristina",
+        "FlagPath": "Files/Kosovo/flag.svg",
+        "CoatPath": "Files/Kosovo/coat.svg",
+        "AnthemPath": "Files/Kosovo/anthem.mp3",
+        "Links": [
+            {
+                "Url": "https://en.wikipedia.org/wiki/Kosovo",
+                "Description": "Wikipedia Link"
+            },
+            {
+                "Url": "https://www.youtube.com/watch?v=H-jrQbsXv6o&ab_channel=EvazuBeck",
+                "Description": "Youtube: Staying with a Family in Kosovo (Mountain Village)"
+            }
+        ]
+    },
+    {
+        "Id": "30",
+        "CountryName": "Montenegro",
+        "CapitalName": "Podgorica",
+        "FlagPath": "Files/Montenegro/flag.svg",
+        "CoatPath": "Files/Montenegro/coat.svg",
+        "AnthemPath": "Files/Montenegro/anthem.mp3",
+        "Links": [
+            {
+                "Url": "https://en.wikipedia.org/wiki/Montenegro",
+                "Description": "Wikipedia Link"
+            },
+            {
+                "Url": "https://www.youtube.com/watch?v=oLnfdDQGu-E&ab_channel=AlexDrone",
+                "Description": "Youtube: Best of all Montenegro Budva Kotor travel drone aerial"
+            }
+        ]
+    },
+    {
+        "Id": "31",
+        "CountryName": "Bulgaria",
+        "CapitalName": "Sofia",
+        "FlagPath": "Files/Bulgaria/flag.svg",
+        "CoatPath": "Files/Bulgaria/coat.svg",
+        "AnthemPath": "Files/Bulgaria/anthem.mp3",
+        "Links": [
+            {
+                "Url": "https://en.wikipedia.org/wiki/Bulgaria",
+                "Description": "Wikipedia Link"
+            },
+            {
+                "Url": "https://www.youtube.com/watch?v=N1-Jmq7BLFE&ab_channel=Jacob%2BKatieSchwarz",
+                "Description": "Youtube: Bulgaria 8K HDR 60P (FUHD)"
+            }
+        ]
+    },
+    {
+        "Id": "32",
+        "CountryName": "Macedonia",
+        "CapitalName": "Skopje",
+        "FlagPath": "Files/Macedonia/flag.svg",
+        "CoatPath": "Files/Macedonia/coat.svg",
+        "AnthemPath": "Files/Macedonia/anthem.mp3",
+        "Links": [
+            {
+                "Url": "https://en.wikipedia.org/wiki/North_Macedonia",
+                "Description": "Wikipedia Link"
+            },
+            {
+                "Url": "https://www.youtube.com/watch?v=zqdWW2TOkBE&ab_channel=AmazingPlaces",
+                "Description": "Youtube: Macedonia country tour | Attractions, lakes, mountains, nature, cities | 4k video | North Macedonia"
+            }
+        ]
+    },
+    {
+        "Id": "33",
+        "CountryName": "Serbia",
+        "CapitalName": "Belgrade",
+        "FlagPath": "Files/Serbia/flag.svg",
+        "CoatPath": "Files/Serbia/coat.svg",
+        "AnthemPath": "Files/Serbia/anthem.mp3",
+        "Links": [
+            {
+                "Url": "https://en.wikipedia.org/wiki/Serbia",
+                "Description": "Wikipedia Link"
+            },
+            {
+                "Url": "https://www.youtube.com/watch?v=aNv0-Hbr3G0&ab_channel=SyifaAdriana",
+                "Description": "Youtube: What the media won't tell you about Serbia"
+            }
+        ]
+    },
+    {
+        "Id": "34",
+        "CountryName": "Bosnia",
+        "CapitalName": "Sarajevo",
+        "FlagPath": "Files/Bosnia/flag.svg",
+        "CoatPath": "Files/Bosnia/coat.svg",
+        "AnthemPath": "Files/Bosnia/anthem.mp3",
+        "Links": [
+            {
+                "Url": "https://en.wikipedia.org/wiki/Bosnia",
+                "Description": "Wikipedia Link"
+            },
+            {
+                "Url": "https://www.youtube.com/watch?v=pbYC_QPN8Tk&ab_channel=TravelPlanner",
+                "Description": "Youtube: 10 Best places in Bosnia and Herzegovina (2021 Guide)"
+            }
+        ]
+    },
+    {
+        "Id": "35",
+        "CountryName": "Croatia",
+        "CapitalName": "Zagreb",
+        "FlagPath": "Files/Croatia/flag.svg",
+        "CoatPath": "Files/Croatia/coat.svg",
+        "AnthemPath": "Files/Croatia/anthem.mp3",
+        "Links": [
+            {
+                "Url": "https://en.wikipedia.org/wiki/Croatia",
+                "Description": "Wikipedia Link"
+            },
+            {
+                "Url": "https://www.youtube.com/watch?v=T60_zAvnAsU&ab_channel=touropia",
+                "Description": "Youtube: 10 Best Places to Visit in Croatia - Travel Video"
+            }
+        ]
+    },
+    {
+        "Id": "36",
+        "CountryName": "Croatia",
+        "CapitalName": "Zagreb",
+        "FlagPath": "Files/Croatia/flag.svg",
+        "CoatPath": "Files/Croatia/coat.svg",
+        "AnthemPath": "Files/Croatia/anthem.mp3",
+        "Links": [
+            {
+                "Url": "https://en.wikipedia.org/wiki/Croatia",
+                "Description": "Wikipedia Link"
+            },
+            {
+                "Url": "https://www.youtube.com/watch?v=T60_zAvnAsU&ab_channel=touropia",
+                "Description": "Youtube: 10 Best Places to Visit in Croatia - Travel Video"
+            }
+        ]
+    },
+    {
+        "Id": "37",
+        "CountryName": "Slovenia",
+        "CapitalName": "Ljubljana",
+        "FlagPath": "Files/Slovenia/flag.svg",
+        "CoatPath": "Files/Slovenia/coat.svg",
+        "AnthemPath": "Files/Slovenia/anthem.mp3",
+        "Links": [
+            {
+                "Url": "https://en.wikipedia.org/wiki/Slovenia",
+                "Description": "Wikipedia Link"
+            },
+            {
+                "Url": "https://www.youtube.com/watch?v=koHbfzwLGC8&ab_channel=ScenicRelaxation",
+                "Description": "Youtube: Slovenia 4K - Scenic Relaxation Film With Calming Music"
+            }
+        ]
+    }                              
 	
 ]
