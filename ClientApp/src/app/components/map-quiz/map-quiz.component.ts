@@ -6,7 +6,6 @@ import { IQuiz } from 'src/app/common/QuizTest';
 import { QuizService } from '../../services/quiz.service';
 import { CountryInfoComponent } from '../country-info/countryInfo.component';
 import { QuizPanelComponent } from '../quiz-panel/quiz-panel.component';
-import { TheotyPanelComponent } from '../theoty-panel/theoty-panel.component';
 
 @Component({
   selector: 'map-quiz',
